@@ -2324,7 +2324,7 @@ ngx_rtmp_hls_cleanup_dir(ngx_str_t *ppath, ngx_msec_t playlen)
                              name.data[name.len - 2] == 't' &&
                              name.data[name.len - 1] == 's')
         {
-            max_age = playlen / 500;
+            max_age = playlen / 200;
 
         } else if (name.len >= 5 && name.data[name.len - 5] == '.' &&
                                     name.data[name.len - 4] == 'm' &&
@@ -2332,14 +2332,14 @@ ngx_rtmp_hls_cleanup_dir(ngx_str_t *ppath, ngx_msec_t playlen)
                                     name.data[name.len - 2] == 'u' &&
                                     name.data[name.len - 1] == '8')
         {
-            max_age = playlen / 500;
+            max_age = playlen / 200;
 
         } else if (name.len >= 4 && name.data[name.len - 4] == '.' &&
                                     name.data[name.len - 3] == 'k' &&
                                     name.data[name.len - 2] == 'e' &&
                                     name.data[name.len - 1] == 'y')
         {
-            max_age = playlen / 500;
+            max_age = playlen / 200;
 
         } else {
             ngx_log_debug1(NGX_LOG_DEBUG_RTMP, ngx_cycle->log, 0,
